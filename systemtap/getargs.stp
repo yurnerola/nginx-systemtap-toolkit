@@ -1,0 +1,8 @@
+probe process( "a.out" ).function( "main" )
+{
+    printf( "argc:%d\n" ,$argc);
+     for (i = 1 ;i < $argc;i ++ )
+    {
+        printf( "argv[%d]=%s\n" ,i,user_string($argv[i]));
+    }
+}

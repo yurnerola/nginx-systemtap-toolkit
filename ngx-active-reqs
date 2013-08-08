@@ -55,12 +55,14 @@ if (!-f $exec_file) {
 my $nginx_path = readlink $exec_file;
 
 my $ver = `stap --version 2>&1`;
+print $ver."\n";
 if (!defined $ver) {
     die "Systemtap not installed or its \"stap\" utility is not visible to the PATH environment: $!\n";
 }
 
 if ($ver =~ /version\s+(\d+\.\d+)/i) {
     my $v = $1;
+	print $v."\n";
     if ($v < 2.1) {
         die "ERROR: at least systemtap 2.1 is required but found $v\n";
     }
