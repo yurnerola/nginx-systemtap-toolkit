@@ -1,3 +1,4 @@
+#!/usr/local/bin/stap
 probe process( "a.out" ).function( "main" )
 {
     printf( "argc:%d\n" ,$argc);
