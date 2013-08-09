@@ -1,0 +1,6 @@
+SystemTap Study
+======
+
+1 gcc -O3 -g main.c
+2 ./getargs
+3 ./a.out
