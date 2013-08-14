@@ -9,11 +9,7 @@ use Getopt::Std;
 
 use vars qw($opt_h $opt_i);
 
-open(my $log,">>","logger.log");
-
-print $log "@ARGV\n";
-
-close $log or die "$log:$!";
+logger("logger @ARGV\n");
 
 getopts('hi:') or die usage();
 
@@ -52,4 +48,12 @@ sub pinfo
 	{
 		print "$1\n";
 	}
+}
+
+sub logger
+{
+	my $logmsg=shift;
+	open my $log,">>","logger.log";
+	print $log $logmsg;
+	close $log or die "$log:$!";
 }
