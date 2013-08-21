@@ -1,5 +1,0 @@
-#!/usr/bin/perl
-
-$answer=42;
-$variable ="answer";
-print "$$variable\n";
